@@ -1,0 +1,33 @@
+====================================================================================================
+OUR-V9 TRANSFERABLE SEMANTIC MANIFOLD
+====================================================================================================
+Target: NC12
+Sources: ['PaviaU', 'Chikusei', 'IndianPines', 'WHU-Hi-HanChuan']
+Ablation: no_dictionary
+Runs: 5
+Target shots/class: 15
+Target episode: support=5, query=10
+Shared object: transferable semantic manifold/basis; no common-distribution assumption.
+Target representation tuning: shallow target spectral adapter ONLY.
+Shared encoder/dictionary during target tuning: FROZEN.
+Source steps: 1500
+Target steps: 500
+Classifier: knn
+
+OA: 87.07 +/- 2.7115
+AA: 91.45 +/- 0.5940
+Kappa: 0.8430 +/- 0.031447
+
+Per-Class Accuracy (Mean +/- Std) [%]
+Class 0: 91.27 +/- 3.3874
+Class 1: 81.80 +/- 5.6910
+Class 2: 97.44 +/- 1.8156
+Class 3: 99.25 +/- 1.3853
+Class 4: 83.48 +/- 4.1292
+Class 5: 90.80 +/- 3.4176
+Class 6: 93.58 +/- 2.3089
+Class 7: 95.00 +/- 1.9451
+Class 8: 96.52 +/- 2.9672
+Class 9: 81.77 +/- 6.9752
+Class 10: 86.49 +/- 6.6279
+Class 11: 100.00 +/- 0.0000

@@ -1,0 +1,33 @@
+================================================================================
+OUR-V9 Semantic Manifold Ablation Batch
+Start: 2026年 08月 19日 星期三 00:32:25 CST
+Python: OUR-Y.py
+GPU: 1
+SOURCE: 0
+N_RUN: 5
+EPOCHS: 2000
+SET: core
+Targets: Salinas NC12 WHU-Hi-LongKou
+Experiments: full no_dictionary no_supcon random_target_init no_target_tune no_target_anchor ce_only
+================================================================================
+[DONE] Target=Salinas | Experiment=full
+[DONE] Target=Salinas | Experiment=no_dictionary
+[DONE] Target=Salinas | Experiment=no_supcon
+[DONE] Target=Salinas | Experiment=random_target_init
+[DONE] Target=Salinas | Experiment=no_target_tune
+[DONE] Target=Salinas | Experiment=no_target_anchor
+[DONE] Target=Salinas | Experiment=ce_only
+[DONE] Target=NC12 | Experiment=full
+[DONE] Target=NC12 | Experiment=no_dictionary
+[DONE] Target=NC12 | Experiment=no_supcon
+[DONE] Target=NC12 | Experiment=random_target_init
+[DONE] Target=NC12 | Experiment=no_target_tune
+[DONE] Target=NC12 | Experiment=no_target_anchor
+[DONE] Target=NC12 | Experiment=ce_only
+[DONE] Target=WHU-Hi-LongKou | Experiment=full
+[DONE] Target=WHU-Hi-LongKou | Experiment=no_dictionary
+[DONE] Target=WHU-Hi-LongKou | Experiment=no_supcon
+[DONE] Target=WHU-Hi-LongKou | Experiment=random_target_init
+[DONE] Target=WHU-Hi-LongKou | Experiment=no_target_tune
+[DONE] Target=WHU-Hi-LongKou | Experiment=no_target_anchor
+[DONE] Target=WHU-Hi-LongKou | Experiment=ce_only

@@ -1,0 +1,20 @@
+# Claude Code local config (contains API token)
+.claude/
+
+# Papers (reference PDFs, local only)
+*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Environment / secrets
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,9 @@
+experiment_name=no_target_tune
+internal_ablation=no_target_tune
+extra_args=
+target=NC12
+source=0
+n_run=5
+epochs=2000
+gpu=1
+finished=2026年 08月 20日 星期四 07:48:13 CST

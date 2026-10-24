@@ -1,0 +1,9 @@
+experiment_name=random_target_init
+internal_ablation=random_target_init
+extra_args=
+target=NC12
+source=0
+n_run=5
+epochs=2000
+gpu=1
+finished=2026年 08月 20日 星期四 02:04:09 CST

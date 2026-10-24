@@ -1,0 +1,563 @@
+
+####################################################################################################
+# OUR-V9 SEMANTIC MANIFOLD | ablation=no_dictionary
+# Sources=['PaviaU', 'Chikusei', 'IndianPines', 'WHU-Hi-HanChuan']
+# Target=WHU-Hi-LongKou | seed=0 | shots=15
+# Shared object = semantic representation basis/manifold, NOT a common distribution.
+# Target-private learning = shallow spectral adapter ONLY.
+####################################################################################################
+when run the def get_dataset, the dataset_name is : PaviaU
+Source PaviaU: channels=103, classes=9, samples=42776
+when run the def get_dataset, the dataset_name is : Chikusei
+Source Chikusei: channels=128, classes=19, samples=77592
+when run the def get_dataset, the dataset_name is : IndianPines
+__header__
+__version__
+__globals__
+indian_pines_gt
+Source IndianPines: channels=200, classes=16, samples=10249
+when run the def get_dataset, the dataset_name is : WHU-Hi-HanChuan
+Source WHU-Hi-HanChuan: channels=274, classes=16, samples=257530
+when run the def get_dataset, the dataset_name is : WHU-Hi-LongKou
+Target WHU-Hi-LongKou: channels=270, classes=9, train=135, val=135, test=204272
+Parameters: total=2,106,365, shared=2,014,465, target_adapter=21,632 (1.027%)
+
+================================================================================================
+STAGE I - MULTI-SOURCE TRANSFERABLE SEMANTIC MANIFOLD LEARNING
+Target data are NOT used.
+================================================================================================
+[Source]     1/1500 | total=2.9155 | cls=2.6494 | supcon=2.6620 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]    50/1500 | total=2.5932 | cls=2.4309 | supcon=1.6231 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   100/1500 | total=2.5446 | cls=2.3655 | supcon=1.7916 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   150/1500 | total=2.4711 | cls=2.2878 | supcon=1.8337 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   200/1500 | total=2.3760 | cls=2.1900 | supcon=1.8598 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   250/1500 | total=2.2820 | cls=2.1483 | supcon=1.3376 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   300/1500 | total=2.2337 | cls=2.1119 | supcon=1.2172 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   350/1500 | total=2.2231 | cls=2.0908 | supcon=1.3228 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   400/1500 | total=2.2312 | cls=2.0700 | supcon=1.6120 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   450/1500 | total=2.1113 | cls=2.0038 | supcon=1.0743 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   500/1500 | total=2.0933 | cls=1.9799 | supcon=1.1340 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   550/1500 | total=2.0468 | cls=1.9099 | supcon=1.3691 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   600/1500 | total=1.9906 | cls=1.8817 | supcon=1.0888 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   650/1500 | total=1.9820 | cls=1.8464 | supcon=1.3561 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   700/1500 | total=1.9035 | cls=1.7926 | supcon=1.1086 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   750/1500 | total=1.8708 | cls=1.7700 | supcon=1.0073 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   800/1500 | total=1.8420 | cls=1.7482 | supcon=0.9383 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   850/1500 | total=1.8787 | cls=1.8076 | supcon=0.7112 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   900/1500 | total=1.8345 | cls=1.7226 | supcon=1.1193 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   950/1500 | total=1.8283 | cls=1.7375 | supcon=0.9076 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1000/1500 | total=1.8839 | cls=1.7226 | supcon=1.6132 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1050/1500 | total=1.8444 | cls=1.7243 | supcon=1.2013 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1100/1500 | total=1.7786 | cls=1.6729 | supcon=1.0570 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1150/1500 | total=1.7825 | cls=1.6883 | supcon=0.9424 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1200/1500 | total=1.7399 | cls=1.6362 | supcon=1.0372 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1250/1500 | total=1.7569 | cls=1.6724 | supcon=0.8451 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1300/1500 | total=1.8425 | cls=1.7329 | supcon=1.0960 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1350/1500 | total=1.7536 | cls=1.6311 | supcon=1.2245 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1400/1500 | total=1.7271 | cls=1.6300 | supcon=0.9710 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1450/1500 | total=1.8655 | cls=1.7590 | supcon=1.0642 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1500/1500 | total=1.8265 | cls=1.6808 | supcon=1.4571 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+
+================================================================================================
+STAGE II - 15-SHOT TARGET SPECTRAL ADAPTER TUNING
+Target labels are used, but ONLY the shallow Target Adapter is trainable.
+Shared Encoder + Semantic Dictionary are frozen.
+================================================================================================
+[Target Init] source-informed: PaviaU:0.148, Chikusei:0.184, IndianPines:0.287, WHU-Hi-HanChuan:0.382
+[TargetAdapter]     1/500 | total=1.2506 | proto=1.2506 | anchor=0.000000 | episode_acc=73.33%
+[TargetAdapter]    50/500 | total=0.4113 | proto=0.4113 | anchor=0.000002 | episode_acc=96.67%
+[TargetAdapter]   100/500 | total=0.3491 | proto=0.3491 | anchor=0.000004 | episode_acc=100.00%
+[TargetAdapter]   150/500 | total=0.3293 | proto=0.3293 | anchor=0.000005 | episode_acc=100.00%
+[TargetAdapter]   200/500 | total=0.3179 | proto=0.3179 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   250/500 | total=0.3091 | proto=0.3091 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   300/500 | total=0.3052 | proto=0.3052 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   350/500 | total=0.3004 | proto=0.3004 | anchor=0.000009 | episode_acc=100.00%
+[TargetAdapter]   400/500 | total=0.3018 | proto=0.3018 | anchor=0.000009 | episode_acc=100.00%
+[TargetAdapter]   450/500 | total=0.3014 | proto=0.3014 | anchor=0.000009 | episode_acc=100.00%
+[TargetAdapter]   500/500 | total=0.2995 | proto=0.2995 | anchor=0.000009 | episode_acc=100.00%
+Diagnostic Val | OA=94.07% | AA=94.07% | Kappa=0.9333
+Final Test | OA=94.16% | AA=91.29% | Kappa=0.9240
+Run 1/5: OA=94.16%, AA=91.29%, Kappa=0.9240
+
+####################################################################################################
+# OUR-V9 SEMANTIC MANIFOLD | ablation=no_dictionary
+# Sources=['PaviaU', 'Chikusei', 'IndianPines', 'WHU-Hi-HanChuan']
+# Target=WHU-Hi-LongKou | seed=1 | shots=15
+# Shared object = semantic representation basis/manifold, NOT a common distribution.
+# Target-private learning = shallow spectral adapter ONLY.
+####################################################################################################
+when run the def get_dataset, the dataset_name is : PaviaU
+Source PaviaU: channels=103, classes=9, samples=42776
+when run the def get_dataset, the dataset_name is : Chikusei
+Source Chikusei: channels=128, classes=19, samples=77592
+when run the def get_dataset, the dataset_name is : IndianPines
+__header__
+__version__
+__globals__
+indian_pines_gt
+Source IndianPines: channels=200, classes=16, samples=10249
+when run the def get_dataset, the dataset_name is : WHU-Hi-HanChuan
+Source WHU-Hi-HanChuan: channels=274, classes=16, samples=257530
+when run the def get_dataset, the dataset_name is : WHU-Hi-LongKou
+Target WHU-Hi-LongKou: channels=270, classes=9, train=135, val=135, test=204272
+Parameters: total=2,106,365, shared=2,014,465, target_adapter=21,632 (1.027%)
+
+================================================================================================
+STAGE I - MULTI-SOURCE TRANSFERABLE SEMANTIC MANIFOLD LEARNING
+Target data are NOT used.
+================================================================================================
+[Source]     1/1500 | total=2.9486 | cls=2.6892 | supcon=2.5943 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]    50/1500 | total=2.6015 | cls=2.4314 | supcon=1.7016 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   100/1500 | total=2.4925 | cls=2.3236 | supcon=1.6889 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   150/1500 | total=2.4826 | cls=2.3131 | supcon=1.6948 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   200/1500 | total=2.3885 | cls=2.2667 | supcon=1.2181 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   250/1500 | total=2.3273 | cls=2.2016 | supcon=1.2568 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   300/1500 | total=2.2165 | cls=2.1290 | supcon=0.8753 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   350/1500 | total=2.2929 | cls=2.1259 | supcon=1.6693 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   400/1500 | total=2.1294 | cls=2.0089 | supcon=1.2048 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   450/1500 | total=2.0985 | cls=2.0071 | supcon=0.9141 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   500/1500 | total=2.0630 | cls=1.9514 | supcon=1.1158 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   550/1500 | total=2.0747 | cls=1.9521 | supcon=1.2255 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   600/1500 | total=1.9683 | cls=1.8381 | supcon=1.3015 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   650/1500 | total=1.9453 | cls=1.8320 | supcon=1.1326 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   700/1500 | total=1.9398 | cls=1.8321 | supcon=1.0772 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   750/1500 | total=1.9152 | cls=1.8101 | supcon=1.0514 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   800/1500 | total=1.8585 | cls=1.7652 | supcon=0.9330 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   850/1500 | total=1.8658 | cls=1.7775 | supcon=0.8831 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   900/1500 | total=1.8265 | cls=1.7276 | supcon=0.9892 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   950/1500 | total=1.8350 | cls=1.7454 | supcon=0.8955 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1000/1500 | total=1.8816 | cls=1.7859 | supcon=0.9564 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1050/1500 | total=1.7948 | cls=1.6965 | supcon=0.9830 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1100/1500 | total=1.7540 | cls=1.6570 | supcon=0.9699 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1150/1500 | total=1.7751 | cls=1.6759 | supcon=0.9917 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1200/1500 | total=1.7987 | cls=1.7253 | supcon=0.7346 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1250/1500 | total=1.8037 | cls=1.7038 | supcon=0.9997 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1300/1500 | total=1.8026 | cls=1.7262 | supcon=0.7646 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1350/1500 | total=1.8559 | cls=1.7876 | supcon=0.6827 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1400/1500 | total=1.8114 | cls=1.7013 | supcon=1.1012 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1450/1500 | total=1.7994 | cls=1.7008 | supcon=0.9858 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1500/1500 | total=1.8644 | cls=1.7652 | supcon=0.9923 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+
+================================================================================================
+STAGE II - 15-SHOT TARGET SPECTRAL ADAPTER TUNING
+Target labels are used, but ONLY the shallow Target Adapter is trainable.
+Shared Encoder + Semantic Dictionary are frozen.
+================================================================================================
+[Target Init] source-informed: PaviaU:0.148, Chikusei:0.184, IndianPines:0.287, WHU-Hi-HanChuan:0.382
+[TargetAdapter]     1/500 | total=1.6004 | proto=1.6004 | anchor=0.000000 | episode_acc=57.78%
+[TargetAdapter]    50/500 | total=0.4116 | proto=0.4116 | anchor=0.000002 | episode_acc=97.78%
+[TargetAdapter]   100/500 | total=0.3415 | proto=0.3415 | anchor=0.000004 | episode_acc=100.00%
+[TargetAdapter]   150/500 | total=0.3258 | proto=0.3258 | anchor=0.000005 | episode_acc=100.00%
+[TargetAdapter]   200/500 | total=0.3124 | proto=0.3124 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   250/500 | total=0.3077 | proto=0.3077 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   300/500 | total=0.3068 | proto=0.3068 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   350/500 | total=0.3006 | proto=0.3006 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   400/500 | total=0.2996 | proto=0.2996 | anchor=0.000009 | episode_acc=100.00%
+[TargetAdapter]   450/500 | total=0.2979 | proto=0.2979 | anchor=0.000009 | episode_acc=100.00%
+[TargetAdapter]   500/500 | total=0.2960 | proto=0.2960 | anchor=0.000009 | episode_acc=100.00%
+Diagnostic Val | OA=91.85% | AA=91.85% | Kappa=0.9083
+Final Test | OA=93.59% | AA=91.01% | Kappa=0.9167
+Run 2/5: OA=93.59%, AA=91.01%, Kappa=0.9167
+
+####################################################################################################
+# OUR-V9 SEMANTIC MANIFOLD | ablation=no_dictionary
+# Sources=['PaviaU', 'Chikusei', 'IndianPines', 'WHU-Hi-HanChuan']
+# Target=WHU-Hi-LongKou | seed=2 | shots=15
+# Shared object = semantic representation basis/manifold, NOT a common distribution.
+# Target-private learning = shallow spectral adapter ONLY.
+####################################################################################################
+when run the def get_dataset, the dataset_name is : PaviaU
+Source PaviaU: channels=103, classes=9, samples=42776
+when run the def get_dataset, the dataset_name is : Chikusei
+Source Chikusei: channels=128, classes=19, samples=77592
+when run the def get_dataset, the dataset_name is : IndianPines
+__header__
+__version__
+__globals__
+indian_pines_gt
+Source IndianPines: channels=200, classes=16, samples=10249
+when run the def get_dataset, the dataset_name is : WHU-Hi-HanChuan
+Source WHU-Hi-HanChuan: channels=274, classes=16, samples=257530
+when run the def get_dataset, the dataset_name is : WHU-Hi-LongKou
+Target WHU-Hi-LongKou: channels=270, classes=9, train=135, val=135, test=204272
+Parameters: total=2,106,365, shared=2,014,465, target_adapter=21,632 (1.027%)
+
+================================================================================================
+STAGE I - MULTI-SOURCE TRANSFERABLE SEMANTIC MANIFOLD LEARNING
+Target data are NOT used.
+================================================================================================
+[Source]     1/1500 | total=2.9386 | cls=2.6905 | supcon=2.4813 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]    50/1500 | total=2.6199 | cls=2.4335 | supcon=1.8640 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   100/1500 | total=2.5341 | cls=2.3422 | supcon=1.9189 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   150/1500 | total=2.4172 | cls=2.2557 | supcon=1.6154 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   200/1500 | total=2.3003 | cls=2.1701 | supcon=1.3021 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   250/1500 | total=2.3196 | cls=2.1880 | supcon=1.3165 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   300/1500 | total=2.2733 | cls=2.1067 | supcon=1.6661 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   350/1500 | total=2.1809 | cls=2.0399 | supcon=1.4098 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   400/1500 | total=2.1234 | cls=2.0142 | supcon=1.0922 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   450/1500 | total=2.0660 | cls=1.9613 | supcon=1.0464 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   500/1500 | total=2.0702 | cls=1.9694 | supcon=1.0078 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   550/1500 | total=2.0623 | cls=1.9453 | supcon=1.1701 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   600/1500 | total=1.9743 | cls=1.8705 | supcon=1.0383 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   650/1500 | total=1.9433 | cls=1.8441 | supcon=0.9921 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   700/1500 | total=1.9567 | cls=1.8566 | supcon=1.0005 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   750/1500 | total=1.9187 | cls=1.8369 | supcon=0.8175 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   800/1500 | total=1.8411 | cls=1.7166 | supcon=1.2447 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   850/1500 | total=1.9080 | cls=1.8167 | supcon=0.9127 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   900/1500 | total=1.8398 | cls=1.7246 | supcon=1.1523 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   950/1500 | total=1.8433 | cls=1.7206 | supcon=1.2269 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1000/1500 | total=1.7873 | cls=1.6654 | supcon=1.2183 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1050/1500 | total=1.9537 | cls=1.8848 | supcon=0.6881 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1100/1500 | total=1.8024 | cls=1.7295 | supcon=0.7292 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1150/1500 | total=1.8325 | cls=1.7217 | supcon=1.1089 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1200/1500 | total=1.8179 | cls=1.7278 | supcon=0.9010 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1250/1500 | total=1.7479 | cls=1.6373 | supcon=1.1062 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1300/1500 | total=1.8724 | cls=1.7401 | supcon=1.3225 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1350/1500 | total=1.7654 | cls=1.6822 | supcon=0.8321 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1400/1500 | total=1.7519 | cls=1.6822 | supcon=0.6971 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1450/1500 | total=1.7520 | cls=1.6652 | supcon=0.8670 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1500/1500 | total=1.7614 | cls=1.6939 | supcon=0.6754 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+
+================================================================================================
+STAGE II - 15-SHOT TARGET SPECTRAL ADAPTER TUNING
+Target labels are used, but ONLY the shallow Target Adapter is trainable.
+Shared Encoder + Semantic Dictionary are frozen.
+================================================================================================
+[Target Init] source-informed: PaviaU:0.148, Chikusei:0.184, IndianPines:0.287, WHU-Hi-HanChuan:0.382
+[TargetAdapter]     1/500 | total=1.2885 | proto=1.2885 | anchor=0.000000 | episode_acc=62.22%
+[TargetAdapter]    50/500 | total=0.3944 | proto=0.3944 | anchor=0.000001 | episode_acc=100.00%
+[TargetAdapter]   100/500 | total=0.3531 | proto=0.3531 | anchor=0.000002 | episode_acc=100.00%
+[TargetAdapter]   150/500 | total=0.3267 | proto=0.3267 | anchor=0.000004 | episode_acc=100.00%
+[TargetAdapter]   200/500 | total=0.3177 | proto=0.3176 | anchor=0.000005 | episode_acc=100.00%
+[TargetAdapter]   250/500 | total=0.3115 | proto=0.3115 | anchor=0.000006 | episode_acc=100.00%
+[TargetAdapter]   300/500 | total=0.3055 | proto=0.3055 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   350/500 | total=0.3033 | proto=0.3033 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   400/500 | total=0.3050 | proto=0.3050 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   450/500 | total=0.3005 | proto=0.3005 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   500/500 | total=0.3018 | proto=0.3017 | anchor=0.000008 | episode_acc=100.00%
+Diagnostic Val | OA=94.07% | AA=94.07% | Kappa=0.9333
+Final Test | OA=93.54% | AA=92.56% | Kappa=0.9165
+Run 3/5: OA=93.54%, AA=92.56%, Kappa=0.9165
+
+####################################################################################################
+# OUR-V9 SEMANTIC MANIFOLD | ablation=no_dictionary
+# Sources=['PaviaU', 'Chikusei', 'IndianPines', 'WHU-Hi-HanChuan']
+# Target=WHU-Hi-LongKou | seed=3 | shots=15
+# Shared object = semantic representation basis/manifold, NOT a common distribution.
+# Target-private learning = shallow spectral adapter ONLY.
+####################################################################################################
+when run the def get_dataset, the dataset_name is : PaviaU
+Source PaviaU: channels=103, classes=9, samples=42776
+when run the def get_dataset, the dataset_name is : Chikusei
+Source Chikusei: channels=128, classes=19, samples=77592
+when run the def get_dataset, the dataset_name is : IndianPines
+__header__
+__version__
+__globals__
+indian_pines_gt
+Source IndianPines: channels=200, classes=16, samples=10249
+when run the def get_dataset, the dataset_name is : WHU-Hi-HanChuan
+Source WHU-Hi-HanChuan: channels=274, classes=16, samples=257530
+when run the def get_dataset, the dataset_name is : WHU-Hi-LongKou
+Target WHU-Hi-LongKou: channels=270, classes=9, train=135, val=135, test=204272
+Parameters: total=2,106,365, shared=2,014,465, target_adapter=21,632 (1.027%)
+
+================================================================================================
+STAGE I - MULTI-SOURCE TRANSFERABLE SEMANTIC MANIFOLD LEARNING
+Target data are NOT used.
+================================================================================================
+[Source]     1/1500 | total=2.9494 | cls=2.6855 | supcon=2.6398 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]    50/1500 | total=2.6444 | cls=2.4376 | supcon=2.0679 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   100/1500 | total=2.5238 | cls=2.3529 | supcon=1.7086 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   150/1500 | total=2.5014 | cls=2.3113 | supcon=1.9009 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   200/1500 | total=2.3402 | cls=2.1918 | supcon=1.4841 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   250/1500 | total=2.3294 | cls=2.2051 | supcon=1.2428 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   300/1500 | total=2.2263 | cls=2.0795 | supcon=1.4671 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   350/1500 | total=2.1958 | cls=2.1026 | supcon=0.9321 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   400/1500 | total=2.1225 | cls=1.9999 | supcon=1.2267 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   450/1500 | total=2.1201 | cls=1.9813 | supcon=1.3883 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   500/1500 | total=2.0646 | cls=1.9472 | supcon=1.1739 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   550/1500 | total=2.0247 | cls=1.9368 | supcon=0.8784 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   600/1500 | total=1.9586 | cls=1.8611 | supcon=0.9756 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   650/1500 | total=1.9785 | cls=1.8996 | supcon=0.7890 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   700/1500 | total=1.9112 | cls=1.7841 | supcon=1.2713 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   750/1500 | total=1.9524 | cls=1.8539 | supcon=0.9843 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   800/1500 | total=1.8800 | cls=1.7911 | supcon=0.8890 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   850/1500 | total=1.8541 | cls=1.7497 | supcon=1.0439 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   900/1500 | total=1.7792 | cls=1.6950 | supcon=0.8419 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   950/1500 | total=1.8228 | cls=1.7449 | supcon=0.7792 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1000/1500 | total=1.8227 | cls=1.7394 | supcon=0.8326 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1050/1500 | total=1.7866 | cls=1.6715 | supcon=1.1515 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1100/1500 | total=1.7629 | cls=1.6762 | supcon=0.8669 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1150/1500 | total=1.7853 | cls=1.7150 | supcon=0.7034 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1200/1500 | total=1.7808 | cls=1.6931 | supcon=0.8779 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1250/1500 | total=1.7605 | cls=1.6635 | supcon=0.9700 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1300/1500 | total=1.7476 | cls=1.6529 | supcon=0.9472 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1350/1500 | total=1.8264 | cls=1.7404 | supcon=0.8596 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1400/1500 | total=1.7431 | cls=1.6467 | supcon=0.9647 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1450/1500 | total=1.7886 | cls=1.6907 | supcon=0.9795 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1500/1500 | total=1.8902 | cls=1.7670 | supcon=1.2316 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+
+================================================================================================
+STAGE II - 15-SHOT TARGET SPECTRAL ADAPTER TUNING
+Target labels are used, but ONLY the shallow Target Adapter is trainable.
+Shared Encoder + Semantic Dictionary are frozen.
+================================================================================================
+[Target Init] source-informed: PaviaU:0.148, Chikusei:0.184, IndianPines:0.287, WHU-Hi-HanChuan:0.382
+[TargetAdapter]     1/500 | total=1.4599 | proto=1.4599 | anchor=0.000000 | episode_acc=64.44%
+[TargetAdapter]    50/500 | total=0.3679 | proto=0.3679 | anchor=0.000002 | episode_acc=100.00%
+[TargetAdapter]   100/500 | total=0.3182 | proto=0.3182 | anchor=0.000005 | episode_acc=100.00%
+[TargetAdapter]   150/500 | total=0.3065 | proto=0.3065 | anchor=0.000006 | episode_acc=100.00%
+[TargetAdapter]   200/500 | total=0.3069 | proto=0.3069 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   250/500 | total=0.2988 | proto=0.2988 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   300/500 | total=0.2991 | proto=0.2991 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   350/500 | total=0.2983 | proto=0.2983 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   400/500 | total=0.2961 | proto=0.2961 | anchor=0.000008 | episode_acc=100.00%
+[TargetAdapter]   450/500 | total=0.2977 | proto=0.2977 | anchor=0.000009 | episode_acc=100.00%
+[TargetAdapter]   500/500 | total=0.2946 | proto=0.2946 | anchor=0.000009 | episode_acc=100.00%
+Diagnostic Val | OA=92.59% | AA=92.59% | Kappa=0.9167
+Final Test | OA=90.93% | AA=89.89% | Kappa=0.8832
+Run 4/5: OA=90.93%, AA=89.89%, Kappa=0.8832
+
+####################################################################################################
+# OUR-V9 SEMANTIC MANIFOLD | ablation=no_dictionary
+# Sources=['PaviaU', 'Chikusei', 'IndianPines', 'WHU-Hi-HanChuan']
+# Target=WHU-Hi-LongKou | seed=4 | shots=15
+# Shared object = semantic representation basis/manifold, NOT a common distribution.
+# Target-private learning = shallow spectral adapter ONLY.
+####################################################################################################
+when run the def get_dataset, the dataset_name is : PaviaU
+Source PaviaU: channels=103, classes=9, samples=42776
+when run the def get_dataset, the dataset_name is : Chikusei
+Source Chikusei: channels=128, classes=19, samples=77592
+when run the def get_dataset, the dataset_name is : IndianPines
+__header__
+__version__
+__globals__
+indian_pines_gt
+Source IndianPines: channels=200, classes=16, samples=10249
+when run the def get_dataset, the dataset_name is : WHU-Hi-HanChuan
+Source WHU-Hi-HanChuan: channels=274, classes=16, samples=257530
+when run the def get_dataset, the dataset_name is : WHU-Hi-LongKou
+Target WHU-Hi-LongKou: channels=270, classes=9, train=135, val=135, test=204272
+Parameters: total=2,106,365, shared=2,014,465, target_adapter=21,632 (1.027%)
+
+================================================================================================
+STAGE I - MULTI-SOURCE TRANSFERABLE SEMANTIC MANIFOLD LEARNING
+Target data are NOT used.
+================================================================================================
+[Source]     1/1500 | total=2.9507 | cls=2.6867 | supcon=2.6409 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]    50/1500 | total=2.6217 | cls=2.4498 | supcon=1.7194 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   100/1500 | total=2.5036 | cls=2.3474 | supcon=1.5619 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   150/1500 | total=2.4643 | cls=2.2972 | supcon=1.6711 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   200/1500 | total=2.3416 | cls=2.1966 | supcon=1.4493 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   250/1500 | total=2.2743 | cls=2.1579 | supcon=1.1638 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   300/1500 | total=2.3023 | cls=2.1725 | supcon=1.2980 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   350/1500 | total=2.2469 | cls=2.1124 | supcon=1.3451 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   400/1500 | total=2.1740 | cls=2.0536 | supcon=1.2045 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   450/1500 | total=2.1711 | cls=2.0181 | supcon=1.5302 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   500/1500 | total=2.0484 | cls=1.9397 | supcon=1.0868 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   550/1500 | total=2.0487 | cls=1.9339 | supcon=1.1475 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   600/1500 | total=1.9498 | cls=1.8611 | supcon=0.8872 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   650/1500 | total=1.9732 | cls=1.8709 | supcon=1.0220 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   700/1500 | total=1.9947 | cls=1.8708 | supcon=1.2391 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   750/1500 | total=1.8826 | cls=1.7894 | supcon=0.9321 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   800/1500 | total=1.9441 | cls=1.8260 | supcon=1.1804 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   850/1500 | total=1.8992 | cls=1.8134 | supcon=0.8573 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   900/1500 | total=1.8246 | cls=1.7231 | supcon=1.0144 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]   950/1500 | total=1.8188 | cls=1.7476 | supcon=0.7124 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1000/1500 | total=1.8382 | cls=1.7735 | supcon=0.6462 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1050/1500 | total=1.8339 | cls=1.7463 | supcon=0.8762 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1100/1500 | total=1.7866 | cls=1.6877 | supcon=0.9890 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1150/1500 | total=1.8491 | cls=1.7407 | supcon=1.0845 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1200/1500 | total=1.7734 | cls=1.6610 | supcon=1.1241 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1250/1500 | total=1.7637 | cls=1.6568 | supcon=1.0688 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1300/1500 | total=1.7576 | cls=1.6522 | supcon=1.0544 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1350/1500 | total=1.7770 | cls=1.6904 | supcon=0.8655 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1400/1500 | total=1.8376 | cls=1.7248 | supcon=1.1279 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1450/1500 | total=1.7786 | cls=1.6455 | supcon=1.3305 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+[Source]  1500/1500 | total=1.8176 | cls=1.7240 | supcon=0.9353 | dict_div=0.0000 | dict_sel=0.0000 | dict_bal=0.0000
+         gate=0.0000 | sample_H=0.0000 | usage_H=0.0000 | max_atom=0.0000
+
+================================================================================================
+STAGE II - 15-SHOT TARGET SPECTRAL ADAPTER TUNING
+Target labels are used, but ONLY the shallow Target Adapter is trainable.
+Shared Encoder + Semantic Dictionary are frozen.
+================================================================================================
+[Target Init] source-informed: PaviaU:0.148, Chikusei:0.184, IndianPines:0.287, WHU-Hi-HanChuan:0.382
+[TargetAdapter]     1/500 | total=1.1976 | proto=1.1976 | anchor=0.000000 | episode_acc=61.11%
+[TargetAdapter]    50/500 | total=0.4863 | proto=0.4863 | anchor=0.000002 | episode_acc=95.56%
+[TargetAdapter]   100/500 | total=0.3358 | proto=0.3357 | anchor=0.000004 | episode_acc=100.00%
+[TargetAdapter]   150/500 | total=0.3193 | proto=0.3193 | anchor=0.000005 | episode_acc=100.00%
+[TargetAdapter]   200/500 | total=0.3101 | proto=0.3101 | anchor=0.000006 | episode_acc=100.00%
+[TargetAdapter]   250/500 | total=0.3041 | proto=0.3041 | anchor=0.000006 | episode_acc=100.00%
+[TargetAdapter]   300/500 | total=0.3032 | proto=0.3032 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   350/500 | total=0.3030 | proto=0.3030 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   400/500 | total=0.3016 | proto=0.3016 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   450/500 | total=0.3025 | proto=0.3025 | anchor=0.000007 | episode_acc=100.00%
+[TargetAdapter]   500/500 | total=0.3041 | proto=0.3040 | anchor=0.000007 | episode_acc=100.00%
+Diagnostic Val | OA=94.07% | AA=94.07% | Kappa=0.9333
+Final Test | OA=94.49% | AA=91.26% | Kappa=0.9282
+Run 5/5: OA=94.49%, AA=91.26%, Kappa=0.9282
+Saved summary: ./checkpoints_v9_semantic_manifold/WHU-Hi-LongKou/no_dictionary/summary.txt
+
+====================================================================================================
+OUR-V9 FINAL | target=WHU-Hi-LongKou | ablation=no_dictionary
+OA: 93.34 +/- 1.2575
+AA: 91.20 +/- 0.8507
+Kappa: 0.9137 +/- 0.015888
+====================================================================================================

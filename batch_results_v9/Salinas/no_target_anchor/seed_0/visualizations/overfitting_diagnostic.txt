@@ -1,0 +1,11 @@
+TARGET ADAPTER OVERFITTING DIAGNOSTIC
+========================================================================
+Validation was monitored for diagnosis only.
+No early stopping/checkpoint selection used these values.
+
+Best diagnostic Val OA: 96.25% at step 325
+Final diagnostic Val OA: 96.25%
+Post-peak Val OA drop: 0.00 pp
+Final LOO-1NN train accuracy: 100.00%
+Final LOO-train minus Val gap: 3.75 pp
+Final target-adapter relative parameter change: 2.634%

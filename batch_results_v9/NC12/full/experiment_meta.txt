@@ -1,0 +1,9 @@
+experiment_name=full
+internal_ablation=full
+extra_args=
+target=NC12
+source=0
+n_run=5
+epochs=2000
+gpu=1
+finished=2026年 08月 19日 星期三 09:41:49 CST

@@ -1,0 +1,37 @@
+====================================================================================================
+OUR-V9 TRANSFERABLE SEMANTIC MANIFOLD
+====================================================================================================
+Target: Salinas
+Sources: ['PaviaU', 'Chikusei', 'IndianPines', 'WHU-Hi-HanChuan']
+Ablation: random_target_init
+Runs: 5
+Target shots/class: 15
+Target episode: support=5, query=10
+Shared object: transferable semantic manifold/basis; no common-distribution assumption.
+Target representation tuning: shallow target spectral adapter ONLY.
+Shared encoder/dictionary during target tuning: FROZEN.
+Source steps: 1500
+Target steps: 500
+Classifier: knn
+
+OA: 91.30 +/- 2.2633
+AA: 94.97 +/- 1.1591
+Kappa: 0.9034 +/- 0.024960
+
+Per-Class Accuracy (Mean +/- Std) [%]
+Class 0: 99.25 +/- 0.8415
+Class 1: 95.27 +/- 2.6567
+Class 2: 95.65 +/- 3.8942
+Class 3: 96.38 +/- 1.9378
+Class 4: 93.37 +/- 2.5100
+Class 5: 99.97 +/- 0.0279
+Class 6: 94.70 +/- 5.4274
+Class 7: 78.26 +/- 6.9621
+Class 8: 98.62 +/- 1.2210
+Class 9: 96.70 +/- 2.8276
+Class 10: 99.46 +/- 0.8456
+Class 11: 95.46 +/- 4.4738
+Class 12: 99.19 +/- 1.4032
+Class 13: 97.71 +/- 1.9388
+Class 14: 84.33 +/- 5.1912
+Class 15: 95.14 +/- 3.7955

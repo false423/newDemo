@@ -1,0 +1,9 @@
+experiment_name=no_target_anchor
+internal_ablation=full
+extra_args=--sm_lambda_target_anchor 0
+target=WHU-Hi-LongKou
+source=0
+n_run=5
+epochs=2000
+gpu=1
+finished=2026年 08月 21日 星期五 07:07:07 CST
